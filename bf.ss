@@ -79,7 +79,7 @@
         ((left) (run rst (tape-back t)))
         ((print)
          (display (integer->char (tape-get t)))
-;         (flush-output-port)
+         (flush-output-port)
          (run rst t))
         ((loop)
          (if (> (tape-get t) 0)
