@@ -79,7 +79,7 @@
         ((left) (run rst (tape-back t)))
         ((print)
          (display (integer->char (tape-get t)))
-         (flush-output-port)
+;         (flush-output-port)
          (run rst t))
         ((loop)
          (if (> (tape-get t) 0)
@@ -93,7 +93,8 @@
     (lambda (port) (get-string-all port))))
 
 (let* ([cl (command-line)]
-       [text (file->string (list-ref cl 1))])
-  (run
+       [file (list-ref cl 1)]
+       [text (file->string "bench.b")])
+  (time (run
     (parse text)
-    (make-tape (make-vector 1) 0)))
+    (make-tape (make-vector 1) 0))))

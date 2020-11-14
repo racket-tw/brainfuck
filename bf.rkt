@@ -87,7 +87,6 @@
     (file->string path)))
 
 (module+ main
-  (define text null)
-  (set! text (read-c (command-line #:args (filename) filename)))
+  (define text (read-c "bench.b"))
 
-  (run (parse text) (tape (make-vector 30000 0) 0)))
+  (time (run (parse text) (tape (make-vector 30000 0) 0)) (newline)))
