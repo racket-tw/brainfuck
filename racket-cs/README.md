@@ -12,3 +12,11 @@ PLT_CS_COMPILE_LIMIT=100000 racket ./functional.rkt ../mandel.b
 # imperative style
 racket ./imperative.rkt ../mandel.b
 ```
+
+### Others
+
+update ./imperative-functional.html by [ydiff](https://github.com/yinwang0/ydiff)
+
+```sh
+ydiff/diff-lisp imperative.rkt functional.rkt
+```
